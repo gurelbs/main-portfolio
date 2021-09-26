@@ -1,5 +1,5 @@
 {
-  "name": "guribs",
+  "name": "gurel.cf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gurelbs/guribs.com.git"
+    "url": "git+https://github.com/gurelbs/gurel.cf.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gurelbs/guribs.com/issues"
+    "url": "https://github.com/gurelbs/gurel.cf/issues"
   },
-  "homepage": "https://github.com/gurelbs/guribs.com#readme",
+  "homepage": "https://github.com/gurelbs/gurel.cf#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.4.6",
     "cors": "^2.8.5",
