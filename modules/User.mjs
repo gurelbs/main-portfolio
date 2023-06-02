@@ -1,9 +1,11 @@
-const {Schema, model} = require('mongoose')
-const User = new Schema({ 
+import { Schema, model } from 'mongoose';
+
+const UserSchema = new Schema({ 
   name: [{type: String}],
   email: {  
     type: String, 
     unique: true,
+    require: true,
     validate: {
       validator: v => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(v),
       message: '{VALUE} is not a valid email address'
@@ -11,6 +13,11 @@ const User = new Schema({
   },
   messages: [{ 
     type: String, 
+    require: true,
+    validate: {
+      validator: v => !!v.length,
+      message: '{VALUE} message is to short.'
+    },
     created: { 
       type: Date, 
       default: Date.now() 
@@ -23,4 +30,4 @@ const User = new Schema({
 });
 
 
-module.exports = model('User', User)
+export const User = model('User', UserSchema)

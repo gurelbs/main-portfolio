@@ -290,7 +290,7 @@ button {
 .home_blob_img {
 	width: 100%;
 	height: 200px;
-	transform: scale(1.5);
+	transform: scale(1.2);
 }
 .home_data {
 	grid-column: 1/3;
