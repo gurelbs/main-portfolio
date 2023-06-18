@@ -160,4 +160,43 @@ themeButton.addEventListener('click', () => {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-})
+});
+
+let isFormInputsValid = false;
+
+function validateEmail(email) {
+  var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$');
+  return pattern.test(email);
+}
+
+document.querySelector('.contact_form').addEventListener('input', ({ target }) => {
+  if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+    const inputs = Array.from(document.querySelectorAll('.contact_input'));
+    if (inputs.every( input => !!input.value.length)){
+      if ((inputs[1].id === 'email' && validateEmail(inputs[1].value))){
+        isFormInputsValid = true;
+        recaptchaBtn.disabled = false;
+        recaptchaBtn.classList.remove('disabled');
+      } else {
+        isFormInputsValid = false
+        recaptchaBtn.disabled = true;
+        recaptchaBtn.classList.add('disabled');
+      }
+    }
+  }
+});
+
+// handle submit and recaptcha requests
+
+const recaptchaBtn = document.querySelector('.g-recaptcha');
+
+recaptchaBtn.addEventListener('click', e => {
+  grecaptcha.ready(() =>{
+    grecaptcha.execute('6Ldcr2kmAAAAAFHGwOZPWQywIihzSEuDIwEyg7NF', {action: 'submit'}).then((token) => {
+        console.log({token});
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', `/send-message`);
+        xhr.send({ token, });
+    });
+  });
+});

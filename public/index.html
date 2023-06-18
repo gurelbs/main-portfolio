@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
 		<!--==================== CSS ====================-->
 		<link rel="stylesheet" href="./assets/css/styles.css" />
-
+		<script src="https://www.google.com/recaptcha/api.js?render=6Ldcr2kmAAAAAFHGwOZPWQywIihzSEuDIwEyg7NF"></script>
 		<title>Gurel Ben Shabat</title>
 	</head>
 	<body>
@@ -628,7 +628,7 @@
 							</div>
 						</div>
 					</div>
-					<form name="contact" action="/send-message" method="POST" class="contact_form grid">
+					<form name="contact" class="contact_form grid" action="/send-message" method="POST" >
 						<div class="contact_inputs grid">
 							<div class="contact_content">
 								<label for="name" class="contact_label">Name</label>
@@ -638,35 +638,42 @@
 									class="contact_input"
 									id="name"
 									name="name"
-									placeholder="Your name"
+									placeholder="Your name (required)"
 								/>
 							</div>
 							<div class="contact_content">
 								<label for="email" class="contact_label">Email</label>
 								<input
-									required
+									aria-required="true"
+									required="true"
+									pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
 									type="email"
 									class="contact_input"
 									id="email"
 									name="email"
-									placeholder="Your email"
+									placeholder="Your email (required)"
 								/>
 							</div>
 						</div>
 						<div class="contact_content">
 							<label for="message" class="contact_label" aria-required="true">Massage</label>
 							<textarea
-								required=""
+								required
+								placeholder="Your message (required)"
 								id="message"
 								name="message"
 								class="contact_input textarea_input"
 								cols="0"
-								rows="10"
-							>
-							</textarea>
+								rows="10"></textarea>
 						</div>
 						<div>
-							<button type="submit" class="button btn-flex">
+							<button
+								data-sitekey="6Lcsb2kmAAAAADdz1woCaBoJIqVXAdacLHDTyXxx"
+								data-callback='onSubmit'
+								data-action='submit'
+								id="send"
+								type="submit"
+								class="button btn-flex disabled g-recaptcha">
 								Send Message
 								<i class="uil uil-message button_icon"></i>
 							</button>
