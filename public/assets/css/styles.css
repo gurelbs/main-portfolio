@@ -397,9 +397,11 @@ button {
 }
 
 .about_info_title {
-	font-size: var(--h2-font-size);
+	font-size: var(--h1-font-size);
 	font-weight: var(--font-semi-bold);
-	color: var(--title-color);
+	color: var(--first-color);
+	display: block;
+	text-align: center;	
 }
 .about_btns {
 	display: flex;
@@ -928,6 +930,7 @@ textarea {
 	}
 	.about_container {
 		column-gap: 5rem;
+		grid-template-columns: auto;
 	}
 	.about_img {
 		width: 350px;
@@ -938,9 +941,9 @@ textarea {
 	.about_info {
 		justify-content: space-between;
 	}
-	.about_btns {
+	/* .about_btns {
 		justify-content: initial;
-	}
+	} */
 	.qualification_tabs {
 		justify-content: center;
 	}
