@@ -147,7 +147,7 @@
          </td>
       </tr>
       <tr align="left">
-         <td><a href="https://guribs.com">Portfolio</a><br><a href="https://guribs.herokuapp.com/">(link 2)</a></td>
+         <td><a href="https://guribs.com">Portfolio</a><br><a href="https://gure.li">(link 2)</a></td>
           <td>my portfolio website</td>
           <td><a href="https://github.com/gurelbs/guribs">gurelbs/guribs</a></td>
           <td>
