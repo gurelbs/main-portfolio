@@ -47,7 +47,7 @@
 
 
 # About me 💎
-## <a href="https://guribs.com" target="_blank">take a look at  my portfolio</a>!
+## <a href="https://gure.li" target="_blank">take a look at  my portfolio</a>!
 
 - 🌎 I’m 26 years old, from israel <img width="15px" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg"/>
 - 🧭 I’m currently Open To Work
