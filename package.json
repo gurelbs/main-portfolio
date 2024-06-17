@@ -1,34 +1,34 @@
 {
-  "name": "gurel.cf",
+  "name": "gure.li",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\"",
+    "dev": "node --watch index.js",
     "deploy": "git add . && git commit -m 'update' && git push origin main"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gurelbs/gurel.cf.git"
+    "url": "git+https://github.com/gurelbs/gure.li.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gurelbs/gurel.cf/issues"
+    "url": "https://github.com/gurelbs/gure.li/issues"
   },
-  "homepage": "https://github.com/gurelbs/gurel.cf#readme",
+  "homepage": "https://github.com/gurelbs/gure.li#readme",
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
+    "@sendgrid/mail": "^8.1.3",
     "cors": "^2.8.5",
     "dotenv": "^16.1.3",
-    "express": "^4.18.2",
-    "mongoose": "^7.2.2"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "concurrently": "^8.1.0",
-    "nodemon": "^2.0.22"
+    "mongoose": "^8.4.1",
+    "nodemon": "^3.1.3"
   }
 }

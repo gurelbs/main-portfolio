@@ -6,9 +6,9 @@ import express, { urlencoded,json} from 'express';
 import { sendEmailRoute } from './routes/userFormPost.mjs';
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env['PORT'] || 4000;
 
-config();
+const vars = config().parsed;
 connectMongoose();
 
 app.use(urlencoded({ extended: false }));
@@ -18,4 +18,4 @@ app.use(express.static(join(process.cwd(), 'public')));
 app.use('/send-message', sendEmailRoute);
 
 
-app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}.\nIDX: http://${PORT+'-'+process.env.WEB_HOST} `));
