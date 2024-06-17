@@ -1,4 +1,3 @@
-import { config } from 'dotenv'
 import { Router } from 'express'
 import sendgrid from '@sendgrid/mail';
 import { User } from '../modules/User.mjs'
@@ -6,7 +5,6 @@ import { User } from '../modules/User.mjs'
 export const sendEmailRoute = new Router()
 
 async function sendEmail(req, res) {
-  config()
   sendgrid.setApiKey(process.env['SENDGRID_API_KEY'])
   const { name, message } = req.body;
   const email = `${req.body.email}`;

@@ -1,10 +1,16 @@
 import mongoose from 'mongoose';
+import { logger } from './logger.js';
 
 export async function connectMongoose() {
   try {
-    await mongoose.connect(process.env.ATLAS_URI);
-    console.log('Connected to Database Successfully');
+    const uri = `${process.env.ATLAS_URI}`;
+    await mongoose.connect(uri);
+    if (mongoose.connection.readyState !== 1) {
+      throw new Error('Failed to connect to MongoDB Atlas');
+    }
+    logger('Connected to MongoDB Atlas successfully');
+    logger('Happy Coding! 🚀');
   } catch (error) {
-    console.error('Error connecting to database:', error); 
+    console.log(error.message);
   }
 }
